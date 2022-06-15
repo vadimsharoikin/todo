@@ -18,17 +18,15 @@ function App() {
 
     const addTodo = async (task) => {
         const res = await axios.post('http://localhost:8080/api/tasks/', {task:task});
-        console.log(res.data)
         setTodos([...todos,res.data]);
     }
 
     const removeTodo = async (id) => {
-        const res = await axios.delete('http://localhost:8080/api/tasks/' + "/" + id);
+        await axios.delete('http://localhost:8080/api/tasks/' + "/" + id);
     }
 
     const updateTodo = async (id, task) => {
-        const res = await axios.put('http://localhost:8080/api/tasks/' + "/" + id, task);
-        console.log(res.data)
+        await axios.put('http://localhost:8080/api/tasks/' + "/" + id, task);
     }
 
     return(
@@ -48,3 +46,4 @@ function App() {
 }
 
 export default App;
+
