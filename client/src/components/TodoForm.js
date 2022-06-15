@@ -9,7 +9,7 @@ const TodoForm = ({addTodo}) => {
         setInput('')
     }
     return (
-        <form onSubmit={handlerSubmit}>
+        <form className="todoform" onSubmit={handlerSubmit}>
             <input type="text" value={todoInput} onChange={(e) => setInput((e.target.value))} required/>
             <button> Добавить цель</button>
         </form>
