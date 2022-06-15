@@ -15,9 +15,15 @@
     display: flex;
     justify-content: center;
 }
+.todolst{
+    padding: 10px;
+}
 .todoItem{
     display: flex;
     justify-content: space-between;
     gap:20px;
     align-items: center;
+}
+.completed{
+    text-decoration: line-through;
 }
