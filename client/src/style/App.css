@@ -15,6 +15,10 @@
     display: flex;
     justify-content: center;
 }
+.todoform{
+    display: flex;
+    justify-content: space-between;
+}
 .todolst{
     padding: 10px;
 }
