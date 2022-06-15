@@ -1,15 +1,16 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 
 const TodoForm = ({addTodo}) => {
-    const todoInput= useRef('')
+    const [todoInput, setInput] = useState('')
+
     const handlerSubmit = (e) => {
         e.preventDefault()
-        addTodo(todoInput.current.value)
-        todoInput.current.value=''
+        addTodo(todoInput)
+        setInput('')
     }
     return (
         <form onSubmit={handlerSubmit}>
-            <input type="text" ref={todoInput}/>
+            <input type="text" value={todoInput} onChange={(e) => setInput((e.target.value))} required/>
             <button> Добавить цель</button>
         </form>
     );
