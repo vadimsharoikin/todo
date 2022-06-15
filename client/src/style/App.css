@@ -11,7 +11,7 @@
 .App{
     margin-top: 100px;
 }
-.App h1{
+.App h1,p{
     display: flex;
     justify-content: center;
 }
