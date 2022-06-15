@@ -14,7 +14,7 @@ function App() {
             setTodos(res.data);
         }
         getTodos();
-    },[])
+    },[todos])
 
     const addTodo = async (task) => {
         const res = await axios.post('http://localhost:8080/api/tasks/', {task:task});
@@ -24,11 +24,6 @@ function App() {
 
     const removeTodo = async (id) => {
         const res = await axios.delete('http://localhost:8080/api/tasks/' + "/" + id);
-        const getTodos = async () =>{
-            const res = await axios.get('http://localhost:8080/api/tasks/')
-            setTodos(res.data);
-        }
-        getTodos();
     }
 
     const updateTodo = async (id, task) => {
