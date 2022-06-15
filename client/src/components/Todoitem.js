@@ -13,7 +13,7 @@ const Todoitem = (props) => {
                 onChange={chengeCheckbox}
                 checked={checked}
             />
-            <h1>{props.todo.task}</h1>
+            <h1 className={` ${checked ? 'completed' : ''}`}>{props.todo.task}</h1>
             <button onClick={()=>props.remove(props.todo._id)}>X</button>
         </div>
     );
