@@ -13,14 +13,14 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
     try {
-        const tasks = await Task.find();
+        const tasks = await Task.getAll();
         res.send(tasks);
     } catch (error) {
         res.send(error);
     }
 });
 
-router.put("/:id", async (req, res) => {
+router.patch()("/:id", async (req, res) => {
     try {
         const task = await Task.findOneAndUpdate(
             { _id: req.params.id },
@@ -34,7 +34,7 @@ router.put("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
     try {
-        const task = await Task.findByIdAndDelete(req.params.id);
+        const task = await Task.deleteOne(req.params.id);
         res.send(task);
     } catch (error) {
         res.send(error);
@@ -42,3 +42,4 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
